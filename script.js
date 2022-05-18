@@ -1,8 +1,23 @@
-// El objetivo del desafio era utilizar lo aprendido para escribir en el DOM utilizando inputs del usuario atraves de eventos en el codigo. 
+
+// Consigna: 
+// Optimizarás tu proyecto final a través de la puesta en práctica de lo visto en esta clase según sea conveniente en cada caso.
+
+//Aspectos a incluir en el entregable:
+// Operador Ternario** / AND / OR. Busca estructuras condicionales simples en tu proyecto y simplifícalas utilizando operador ternario u operadores lógicos AND y OR.
+
+// Optimización. Con lo visto en clase, optimiza la asignación condicional de variables.
+
+// Desestructuración. Aplica la desestructuración según corresponda para recuperar propiedades de objetos con claridad y rapidez.
+
+// Spread. Usa el operador spread para replicar objetos o arrays o, también, para mejorar la lógica de tus funciones.
+
+
 
 // El concepto es de un board de canciones que las personas podrán apoyar con el presionar de un Enter a partir del resultado del test en la parte inferior. 
 
 localStorage.clear();
+
+
 
 // Array inicial con las canciones presentadas al usuario. 
 const songs = [
@@ -97,15 +112,15 @@ let imgV = parseInt(0);
 let bandInSpotlight;
 
 bandImage.onmousemove = () => {
-    imgV++
+    imgV++        // Sugar Syntax (⭐️)
     console.log("mousemove")
     bandImage.src="images/band" + imgV + ".jpg"
     bandEres.innerText = "Eres: " + bandNames[imgV-1];
     bandInSpotlight = bandNames[imgV-1]
     
-    if (imgV > bandNames.length-1) {
-        imgV = parseInt(0);
-    }
+    imgV > bandNames.length-1 ? imgV = 0 : imgV    // Operador terniario! (⭐️)
+
+    
 };
 
 // ########################################################################################################################
