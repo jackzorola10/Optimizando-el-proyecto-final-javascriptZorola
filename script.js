@@ -130,7 +130,7 @@ bandImage.onmousemove = () => {
 let enterValidation = document.getElementById("all");
 
 enterValidation.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
+    event.key === "Enter" &&    // Operador Logico AND (⭐️)
         event.preventDefault();
         console.log("ENTER");
 
@@ -145,6 +145,7 @@ enterValidation.addEventListener("keypress", (event) => {
                 id: obj.id,
                 name: obj.name,
                 autor: obj.autor,
+                genero: obj.genero,
                 aplausos: parseInt(obj.aplausos++)};
             }
             return obj;
@@ -153,7 +154,7 @@ enterValidation.addEventListener("keypress", (event) => {
           initialPlaylist = document.getElementById("PlaylistSelection");
           stringify = stringsOfArrayOfSongs.join("");
           initialPlaylist.innerHTML = stringify;
-    }
+    
 } )
 
 
