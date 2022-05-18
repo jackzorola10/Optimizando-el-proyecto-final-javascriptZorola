@@ -45,9 +45,17 @@ const songs = [
 
 
 // Array de nombres de las bandas, este array esta matcheado contra las imagenes que tenemos en la carpeta. Para que le aparezca al usuario el nombre dependiendo de lo que le haya aparecido. 
-const bandNames = [
+
+
+/* const bandNames = [
     "Tally Hall", "Dr. D.R.E.", "Kongos", "EXO", "Hermes House Band", "Dua Lipa", "Kay Vs the Moon", "Eminem", "Drake Bell", "Amigos Invisibles", "TWICE", "Ed Sheeran", "50 Cent", "Britney Spears", "BLACKPINK", "BTS", "Wanna One", "Chayanne", "Residente"
-]
+]  */
+
+let bandNames = []
+
+for (let obj of songs) {
+    bandNames = [...bandNames, obj.autor]   // Spread (⭐️)
+}
 
 let stringsOfArrayOfSongs = [] // Se llenará de un string hecho para poder depositarse con un innerHTML de manera comoda. 
  
@@ -139,17 +147,17 @@ enterValidation.addEventListener("keypress", (event) => {
 
         const newArr = songs.map(obj => {
 
-
             if (obj.autor === bandNameFilter) {
-              return {
-                id: obj.id,
-                name: obj.name,
-                autor: obj.autor,
-                genero: obj.genero,
-                aplausos: parseInt(obj.aplausos++)};
-            }
-            return obj;
+                return {
+                  id: obj.id,
+                  name: obj.name,
+                  autor: obj.autor,
+                  aplausos: parseInt(obj.aplausos++)};
+              }
+              return obj;  
+
           });
+
           printTableOfSongs(newArr);
           initialPlaylist = document.getElementById("PlaylistSelection");
           stringify = stringsOfArrayOfSongs.join("");
