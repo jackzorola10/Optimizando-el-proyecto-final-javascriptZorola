@@ -152,6 +152,7 @@ enterValidation.addEventListener("keypress", (event) => {
                   id: obj.id,
                   name: obj.name,
                   autor: obj.autor,
+                  genero: obj.genero,
                   aplausos: parseInt(obj.aplausos++)};
               }
               return obj;  
